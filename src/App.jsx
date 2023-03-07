@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { Alchemy, Network } from "alchemy-sdk";
 import { useState } from "react";
+require("dotenv").config();
 
 function App() {
   const [userAddress, setUserAddress] = useState("");
@@ -20,7 +21,7 @@ function App() {
 
   async function getNFTsForOwner() {
     const config = {
-      apiKey: "_tj9j6gyffDBNNOkyuR8oWpooizPiTRo",
+      apiKey: process.env.ALCHEMY,
       network: Network.ETH_MAINNET,
     };
 
